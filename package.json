@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
+    "build": "webpack --mode development",
     "server": "python -m SimpleHTTPServer 8000"
   },
   "author": "andrei-m",
@@ -21,7 +21,9 @@
   },
   "dependencies": {
     "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "react-dom": "16.9.0",
+    "venn.js": "0.2.20",
+    "d3": "5.12.0"
   },
   "babel": {
     "presets": [
