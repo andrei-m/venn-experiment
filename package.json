@@ -1,0 +1,32 @@
+{
+  "name": "venn-experiment",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "server": "webpack-dev-server"
+  },
+  "author": "andrei-m",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "babel-loader": "8.0.6",
+    "@babel/preset-env": "7.5.5",
+    "@babel/preset-react": "7.0.0",
+    "webpack": "4.39.1",
+    "webpack-cli": "3.3.6"
+  },
+  "dependencies": {
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  }
+}
