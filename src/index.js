@@ -6,8 +6,8 @@ import * as d3 from 'd3';
 class Diagram extends React.Component {
   componentDidMount() {
 	var sets = [ {sets: ['A'], size: 12},
-				 {sets: ['B'], size: 12},
-				 {sets: ['A','B'], size: 6}];
+				 {sets: ['B'], size: 20},
+				 {sets: ['A','B'], size: 8}];
 
 	var chart = venn.VennDiagram();
 	d3.select(".venn").datum(sets).call(chart);
