@@ -18,7 +18,12 @@ class TwoElement extends React.Component {
   componentDidMount() {
 	var sets = [ {sets: ['DisjunctionA'], size: 12}, // disjunction
 				 {sets: ['DisjunctionB'], size: 20}, // disjunction
-				 {sets: ['DisjunctionA','DisjunctionB'], size: 8}]; // conjunction
+				 {sets: ['DisjunctionC'], size: 25}, // disjunction
+				 {sets: ['DisjunctionA','DisjunctionB'], size: 10}, // conjunction
+				 {sets: ['DisjunctionA','DisjunctionC'], size: 10}, // conjunction
+				 {sets: ['DisjunctionB','DisjunctionC'], size: 10}, // conjunction
+				 {sets: ['DisjunctionA','DisjunctionB','DisjunctionC'], size: 5}]; // conjunction
+
 
 	var chart = venn.VennDiagram();
     var div = d3.select(".TwoElement");
@@ -32,13 +37,13 @@ class TwoElement extends React.Component {
 		// sort all the areas relative to the current item
         venn.sortAreas(div, d);
         // Display a tooltip with the current size
-        tooltip.transition().duration(400).style("opacity", .9);
-        tooltip.text(d.size + " users");
+        tooltip.transition().duration(200).style("opacity", .9);
+        tooltip.text(d.size + "M UE");
 
         // highlight the current path
-        var selection = d3.select(this).transition("tooltip").duration(400);
+        var selection = d3.select(this).transition("tooltip").duration(200);
         selection.select("path")
-        .style("stroke-width", 3)
+        .style("stroke-width", 10)
         .style("fill-opacity", d.sets.length == 1 ? .4 : .1)
         .style("stroke-opacity", 1);
     })
@@ -48,7 +53,7 @@ class TwoElement extends React.Component {
     })
     .on("mouseout", function(d, i) {
         tooltip.transition().duration(400).style("opacity", 0);
-        var selection = d3.select(this).transition("tooltip").duration(400);
+        var selection = d3.select(this).transition("tooltip").duration(200);
         selection.select("path")
             .style("stroke-width", 0)
             .style("fill-opacity", d.sets.length == 1 ? .25 : .0)
